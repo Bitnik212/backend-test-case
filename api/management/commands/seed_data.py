@@ -7,7 +7,6 @@ class Command(BaseCommand):
     help = 'Seed the database with sample Food and FoodCategory data'
 
     def handle(self, *args, **kwargs):
-        # Clear existing data to avoid conflicts
         self.stdout.write('Clearing existing data...')
         Food.objects.all().delete()
         FoodCategory.objects.all().delete()
